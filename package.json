@@ -1,0 +1,19 @@
+{
+  "name": "adafruit-scraper",
+  "version": "0.0.0",
+  "description": "ITP wishlists for Adafruit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithru/adafruit-wishlists.git"
+  },
+  "author": "Mithru Vigneshwara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mithru/adafruit-wishlists/issues"
+  },
+  "homepage": "https://github.com/mithru/adafruit-wishlists#readme"
+}
