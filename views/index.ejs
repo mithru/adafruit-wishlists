@@ -1,0 +1,77 @@
+<html>
+<head>
+
+<title>Adafruit Shared Orders</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class = "container"> 
+	<div class = row>
+		<div class = "col-md-8 col-md-offset-2">
+		<img class = "logo" src="http://wordpress-acx.s3-us-west-1.amazonaws.com/wp-content/uploads/2015/10/adafruit.jpg"/>
+		<img class = "logo right" src="https://pbs.twimg.com/profile_images/532923661854842881/ZoBOWrME.png"/>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-md-8 col-md-offset-2">
+			<form method="post" action="/" class="form form-block">
+				<div class="input-group has-feedback">
+				<input required name = "url" type="url" class="form-control txtfield-height-control" placeholder="Paste Adafruit wishlist here">
+				<input required name = "email" type="email" class="form-control txtfield-height-control" placeholder="Enter your email address here">
+				<input name = "date" type="datetime-local" class="form-control txtfield-height-control" placeholder="When will you be placing your order?">
+						    <span class="input-group-btn">
+					<button class="btn btn-success btn-secondary btn-block btn-height-control btn-lg" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+				    </span>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-md-8 col-md-offset-2">
+			<table class="table ">	
+				<tr class="active">
+					<th>Who needs to order</th>
+					<th>By when</th>
+					<th>How much</th>
+				</tr>
+				<% wishlists.forEach(function(item){ %>
+				<% if(item.isConfirmed === false) { %> 
+				<tr class = "danger">
+				<% } else { %> 
+				<tr class = "success">
+				<% } %> 
+					<td><%= item.user %></td>
+					<td><%= item.expiryDate %></td>
+					<td><%= item.total %></td>
+				</tr>
+				<% }); %>
+
+
+			</table>
+		</div>
+	</div>
+
+
+	<div class = "row footer">
+		<div class = "col-md-8 col-md-offset-2">
+		  <p class="text-muted">Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+		  <span class="sr-only">love </span>  by <a href="http://mithru.com" >Mithru</a> </p>
+		</div>
+	</div> 
+
+</div>
+</body>
+</html>
